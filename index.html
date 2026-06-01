@@ -107,6 +107,18 @@
       0%, 80%, 100% { opacity: 0.2; }
       40% { opacity: 1; }
     }
+
+    .counter {
+      margin-top: 28px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .counter .num {
+      font-weight: 600;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
   </style>
 </head>
 <body>
@@ -123,6 +135,23 @@
     <p>Estamos trabajando en algo nuevo. Volvé pronto para verlo en línea.</p>
     <div class="divider"></div>
     <p class="domain"><strong>nicolascarreras.com.ar</strong></p>
+    <p class="counter">Visitas: <span class="num" id="contador">…</span></p>
   </main>
+
+  <script>
+    const API = "https://api.nicolascarreras.com.ar";
+
+    async function registrarVisita() {
+      try {
+        const res = await fetch(API + "/visita", { method: "POST" });
+        const data = await res.json();
+        document.getElementById("contador").textContent = data.total.toLocaleString("es-AR");
+      } catch (e) {
+        document.getElementById("contador").textContent = "—";
+      }
+    }
+
+    registrarVisita();
+  </script>
 </body>
 </html>
