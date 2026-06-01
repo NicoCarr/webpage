@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>En construcción — Nicolás Carreras</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --border: #ececec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 56px 48px;
+      max-width: 460px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.04);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff4ff;
+      border-radius: 14px;
+      color: var(--accent);
+    }
+
+    .icon svg { width: 28px; height: 28px; }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto 24px;
+      max-width: 80px;
+    }
+
+    .domain {
+      font-size: 0.875rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .domain strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .dots {
+      display: inline-flex;
+      gap: 4px;
+      margin-left: 2px;
+    }
+
+    .dots span {
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: blink 1.4s infinite both;
+    }
+
+    .dots span:nth-child(2) { animation-delay: 0.2s; }
+    .dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0.2; }
+      40% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 12h20"/>
+        <path d="M6 12V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6"/>
+        <path d="M6 12v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"/>
+        <path d="M12 4v16"/>
+      </svg>
+    </div>
+    <h1>Sitio en construcción<span class="dots"><span></span><span></span><span></span></span></h1>
+    <p>Estamos trabajando en algo nuevo. Volvé pronto para verlo en línea.</p>
+    <div class="divider"></div>
+    <p class="domain"><strong>nicolascarreras.com.ar</strong></p>
+  </main>
+</body>
+</html>
